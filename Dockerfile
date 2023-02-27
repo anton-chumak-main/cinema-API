@@ -12,6 +12,7 @@ COPY . .
 
 RUN mkdir -p /vol/web/media
 
+ENV PIP_ROOT_USER_ACTION=ignore
 RUN adduser \
     --disabled-password \
     --no-create-home \
