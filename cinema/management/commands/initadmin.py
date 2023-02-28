@@ -8,7 +8,7 @@ from user.models import User
 class Command(BaseCommand):
 
     def handle(self, *args: Any, **options: dict[str]) -> None:
-        if User.objects.filter(
+        if not User.objects.filter(
                 email=settings.ADMINS["EMAIL"]
         ).exists():
             email = settings.ADMINS["EMAIL"]
